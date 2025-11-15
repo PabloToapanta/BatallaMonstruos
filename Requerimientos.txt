@@ -1,0 +1,22 @@
+Simulacion de ejecucion de codigo..
+
+**Inicio ejecucion
+
+Bienvenido al juego.
+Escoja segun corresponda
+
+Single Player
+Multijugador
+
+En caso de escoger Multijugador
+
+Batalla:
+P1, escoga a sus monstruos
+(P1 escoge)
+P2, escoga a sus monstruos
+(P2 escoge a sus monstruos)
+
+//Inicio de la batalla
+<Codigo de la batalla>
+//Fin de la batalla
+
