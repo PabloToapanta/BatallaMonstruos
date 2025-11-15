@@ -62,6 +62,14 @@ public class Jugador {
         }
         return sb.toString();
     }
+    public boolean haPerdido(){
+        for(Monstruo monstruo: listaMonstruo){
+            if(monstruo.getVida()>0){
+                return false;
+            }
+        }
+        return true;
+    }
     @Override
     public String toString(){
         if(this.monstruoActual==null) throw new RuntimeException("Monstruo Actual no elegido");
