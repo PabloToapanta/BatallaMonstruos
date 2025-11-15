@@ -41,16 +41,20 @@ public class Batalla {
             jugador2.elegirMonstruoActual(recibirInts("Ingrese el numero del monstruo que va a escoger"));
         System.out.println("------------------------------------------------");
         boolean continuaJuego=true;
+        boolean j1=true;
         while(continuaJuego){
-            boolean j1=true;
+            
             System.out.println("Ronda: "+(ronda++));
             if(j1){
                 System.out.printf("Turno de %s%n",jugador1.getNombre());
-
+                System.out.printf("%s ataca a %s%n",jugador1.getMonstruoActual().getNombre(),jugador2.getMonstruoActual().getNombre());
                 jugador1.getMonstruoActual().realizarAtaque(jugador2.getMonstruoActual());
+                System.out.printf("%s queda con %d vida%n",jugador2.getMonstruoActual().getNombre(),jugador2.getMonstruoActual().getVida());
             }else if(!j1){
                 System.out.printf("Turno de %s%n",jugador2.getNombre());
+                System.out.printf("%s ataca a %s%n",jugador2.getMonstruoActual().getNombre(),jugador1.getMonstruoActual().getNombre());
                 jugador2.getMonstruoActual().realizarAtaque(jugador1.getMonstruoActual());
+                System.out.printf("%s queda con %d vida%n",jugador1.getMonstruoActual().getNombre(),jugador1.getMonstruoActual().getVida());
             }
             if(hayGanador(jugador2, jugador1)){
                 continuaJuego=false;
@@ -76,11 +80,11 @@ public class Batalla {
         
     }
     public boolean hayGanador(Jugador jug1, Jugador jug2){
-        if(jug1.getMonstruoActual().getVida()==0 || jug2.getMonstruoActual().getVida()==0){
-            if(jug1.getMonstruoActual().getVida()==0){
-                System.out.printf("El ganador de la batalla fue %s%n",jug1.getNombre());
-            }else{
+        if(jug1.getMonstruoActual().getVida()<=0 || jug2.getMonstruoActual().getVida()<=0){
+            if(jug1.getMonstruoActual().getVida()<=0){
                 System.out.printf("El ganador de la batalla fue %s%n",jug2.getNombre());
+            }else{
+                System.out.printf("El ganador de la batalla fue %s%n",jug1.getNombre());
             }
             return true;
         }

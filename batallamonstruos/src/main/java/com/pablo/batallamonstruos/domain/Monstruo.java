@@ -33,10 +33,14 @@ public class Monstruo {
 
 
     public void realizarAtaque(Monstruo monstruo){
-        System.out.printf("%s ataca a %s%n",this.nombre,monstruo.getNombre());
-        if(this.ataque>monstruo.getVida())monstruo.setVida(0);
-        monstruo.setVida(monstruo.getVida()-this.ataque);
-        System.out.printf("%s queda con %d vida%n",monstruo.getNombre(),monstruo.getVida());
+
+        if(this.ataque>monstruo.getVida()){
+            monstruo.setVida(0);
+        }else{
+            monstruo.setVida(monstruo.getVida()-this.ataque);
+        }
+        
+
     }
     @Override
     public String toString(){

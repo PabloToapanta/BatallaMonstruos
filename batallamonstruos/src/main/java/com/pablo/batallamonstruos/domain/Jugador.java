@@ -51,7 +51,7 @@ public class Jugador {
             monstruo.setVida(0);
         }
     }
-    public void listarMonstruos(){
+    public String listarMonstruos(){
         StringBuilder sb = new StringBuilder();
         sb.append("-----LISTA DE MONSTRUOS----\n");
         int n=1;
@@ -60,7 +60,7 @@ public class Jugador {
             sb.append(monstruo.toString());
             sb.append("-------------------\n");
         }
-        System.out.println(sb.toString());
+        return sb.toString();
     }
     @Override
     public String toString(){
